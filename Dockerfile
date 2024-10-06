@@ -17,4 +17,4 @@ FROM backend-base as production
 ADD requirements/prod.txt .
 RUN --mount=type=cache,target=/root/.cache/pip pip install setuptools && pip install -r prod.txt
 ADD . ./
-RUN python manage.py collectstatic --noinput
+#RUN python manage.py collectstatic --noinput
