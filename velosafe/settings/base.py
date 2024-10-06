@@ -155,5 +155,6 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
         "LOCATION": "page_cache",
+        "TIMEOUT": None,
     }
 }
