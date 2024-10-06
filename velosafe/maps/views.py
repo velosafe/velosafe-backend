@@ -88,7 +88,7 @@ class UserRouteView(View):
             return HttpResponse(result)
         try:
             result = RoutePlanningFacade().plan_route(facade_input)
-        except NetworkXNoPath as e:
+        except (NetworkXNoPath, ValueError) as e:
             result = render_to_string("error.html")
         cache.set(cache_key, result)
         return HttpResponse(result)
