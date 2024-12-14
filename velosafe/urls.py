@@ -20,6 +20,12 @@ schema_view = get_schema_view(
 
 router = DefaultRouter()
 
+velosafe_routes = [
+    path("preferences-form/", PreferencesFormView.as_view()),
+    path("user-route/", UserRouteView.as_view()),
+    path("", include("velosafe.maps.urls")),
+]
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
@@ -29,9 +35,7 @@ urlpatterns = [
         schema_view.with_ui("swagger", cache_timeout=0),
         name="schema-swagger",
     ),
-    path("preferences-form/", PreferencesFormView.as_view()),
-    path("user-route/", UserRouteView.as_view()),
     path("__debug__/", include("debug_toolbar.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
-    path("", include("velosafe.maps.urls")),
 ]
+urlpatterns += velosafe_routes

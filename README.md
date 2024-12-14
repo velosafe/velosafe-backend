@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/github_username/hackyeah2024/actions/workflows/backend.yml/badge.svg)](https://github.com/github_username/hackyeah2024/actions)
 
-Project for hackyeah 2024
+Project for hackyeah and hacknarok 2024
 
 # Prerequisites
 
